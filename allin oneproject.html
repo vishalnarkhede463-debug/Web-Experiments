@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All In One Project</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* BASIC RESET */
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+body {
+  background:#1e1e1e;
+  color:#d4d4d4;
+  padding:30px 20px;
+  text-align:center;
+}
+
+/* HEADINGS */
+h1, h2 {
+  color:#00c896;
+  margin-bottom:15px;
+}
+
+h1 {
+  font-size:1.8rem;
+}
+
+h2 {
+  font-size:1.3rem;
+  margin-top:25px;
+  text-align:left;
+}
+
+/* CODE BLOCKS – VS CODE STYLE */
+pre {
+  background:#1e1e1e;
+  padding:15px 20px;
+  margin:15px auto;
+  border-radius:5px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.5);
+  overflow-x:auto;
+  text-align:left;
+  position:relative;
+  border-left:5px solid #00c896;
+  font-size:0.9rem;
+  line-height:1.4rem;
+}
+
+/* SYNTAX COLORS */
+pre code {
+  display:block;
+  white-space: pre-wrap;
+}
+
+pre code .tag { color:#569cd6; }
+pre code .attr { color:#9cdcfe; }
+pre code .string { color:#ce9178; }
+pre code .comment { color:#6a9955; }
+pre code .keyword { color:#c586c0; }
+pre code .number { color:#b5cea8; }
+
+/* COPY BUTTON */
+.copy-btn {
+  position:absolute;
+  top:8px;
+  right:8px;
+  background:#2d2d2d;
+  border:none;
+  border-radius:5px;
+  padding:5px 8px;
+  cursor:pointer;
+  color:#00c896;
+  font-size:0.8rem;
+}
+
+.copy-btn:hover {
+  background:#3e3e3e;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  display:inline-block;
+  margin-top:25px;
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background:#2d2d2d;
+  color:#00c896;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.2s;
+}
+
+.back-btn:hover {
+  background:#3e3e3e;
+  box-shadow:0 0 8px #00c896;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  pre { font-size:0.8rem; padding:12px; }
+  h1 { font-size:1.5rem; }
+  h2 { font-size:1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<h1>All In One Project</h1>
+
+<!-- FIRST PROJECT -->
+<section style="margin-top:40px;">
+<h2>Project 1: Portfolio Website</h2>
+<p>A responsive personal portfolio website to showcase projects and skills.</p>
+
+<h3>HTML</h3>
+<pre id="htmlCode1"><code>
+<span class="comment">&lt;!-- HTML CODE --&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Portfolio<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+    Hello, I am Vishal!
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+</code>
+<button class="copy-btn" onclick="copyCode('htmlCode1')"><i class="fas fa-copy"></i> Copy</button></pre>
+
+<h3>CSS</h3>
+<pre id="cssCode1"><code>
+<span class="comment">/* CSS CODE */</span>
+body {
+  background: #e0e5ec;
+  color: #3d4468;
+}
+</code>
+<button class="copy-btn" onclick="copyCode('cssCode1')"><i class="fas fa-copy"></i> Copy</button></pre>
+
+<h3>JavaScript</h3>
+<pre id="jsCode1"><code>
+<span class="comment">// JavaScript CODE</span>
+console.log("Portfolio project running");
+</code>
+<button class="copy-btn" onclick="copyCode('jsCode1')"><i class="fas fa-copy"></i> Copy</button></pre>
+</section>
+
+<!-- SECOND PROJECT -->
+<section style="margin-top:60px;">
+<h2>Project 2: Mini Game</h2>
+<p>A simple browser game built with JavaScript to demonstrate interactivity.</p>
+
+<h3>HTML</h3>
+<pre id="htmlCode2"><code>
+<span class="comment">&lt;!-- HTML CODE --&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Mini Game<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+    Welcome to the game!
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+</code>
+<button class="copy-btn" onclick="copyCode('htmlCode2')"><i class="fas fa-copy"></i> Copy</button></pre>
+
+<h3>CSS</h3>
+<pre id="cssCode2"><code>
+<span class="comment">/* CSS CODE */</span>
+body {
+  background: #f0f0f0;
+  color: #333;
+}
+</code>
+<button class="copy-btn" onclick="copyCode('cssCode2')"><i class="fas fa-copy"></i> Copy</button></pre>
+
+<h3>JavaScript</h3>
+<pre id="jsCode2"><code>
+<span class="comment">// JavaScript CODE</span>
+console.log("Mini Game running!");
+</code>
+<button class="copy-btn" onclick="copyCode('jsCode2')"><i class="fas fa-copy"></i> Copy</button></pre>
+</section>
+
+<script>
+function copyCode(id){
+  const codeBlock = document.getElementById(id).querySelector('code');
+  navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
+    // Custom friendly message instead of code content
+    alert('Text is copied! Follow us on Instagram @cyber_vishucodex');
+  });
+}
+</script>
+
+</body>
+</html>
