@@ -171,12 +171,22 @@ margin-bottom:10px;
 .visit-btn{
 display:inline-block;
 margin-top:15px;
-padding:8px 18px;
+padding:10px 20px;
 border-radius:10px;
 background:#00e5ff;
 color:black;
 text-decoration:none;
 font-weight:bold;
+transition:0.3s;
+box-shadow:0 0 10px #00e5ff;
+}
+
+.visit-btn:hover{
+transform:scale(1.05);
+box-shadow:
+0 0 10px #00e5ff,
+0 0 25px #00e5ff,
+0 0 40px #00e5ff;
 }
 
 /* DOWNLOAD */
@@ -312,6 +322,51 @@ text-align:center;
 }
 
 }
+
+
+
+
+/* MOBILE MENU */
+
+.menu-toggle{
+display:none;
+font-size:24px;
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+nav{
+flex-direction:row;
+}
+
+#nav-links{
+position:absolute;
+top:70px;
+right:0;
+background:#0f2027;
+width:200px;
+flex-direction:column;
+align-items:center;
+display:none;
+padding:20px;
+}
+
+#nav-links.active{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+}
+
+html{
+scroll-behavior:smooth;
+}
 </style>
 </head>
 
@@ -320,15 +375,21 @@ text-align:center;
 <canvas id="particles"></canvas>
 
 <nav>
+
 <h2 class="logo">CyberVishuCodex</h2>
-<ul>
+
+<div class="menu-toggle" id="menu-toggle">
+<i class="fas fa-bars"></i>
+</div>
+
+<ul id="nav-links">
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#downloads">Downloads</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
-</nav>
 
+</nav>
 <!-- HOME -->
 
 <section id="home" class="hero">
@@ -361,30 +422,47 @@ text-align:center;
 <h3>Projects</h3>
 <p>Explore coding projects and source codes.</p>
 
-<a href="project.html" class="visit-btn">Visit Projects</a>
+<a href="allin oneproject.html" class="visit-btn">Visit Projects</a>
 
 </div>
 
-<div class="card">
-<i class="fas fa-chalkboard-teacher fa-2x"></i>
-<h3>Learning</h3>
-<p>Access tutorials and guides for developers.</p>
-</div>
+<!-- LEARNING CARD --> <div class="card"> 
+   <i class="fas fa-chalkboard-teacher fa-2x"></i>
+   <h3>Learning</h3> <p>Access tutorials and guides for developers.</p>
+    <a href="learner.html" class="visit-btn">Start Learning</a>
+   </div> 
+   <!-- COMMUNITY CARD -->
 
 <div class="card">
+
 <i class="fas fa-users fa-2x"></i>
+
 <h3>Community</h3>
-<p>Join coders and collaborate together.</p>
-</div>
+
+<p>Join our coding community on Instagram.</p>
+
+<a href="https://www.instagram.com/cyber_vishucodex" 
+class="visit-btn" 
+target="_blank">
+Cyber Vishu Codex
+</a>
+
+<br><br>
+
+<a href="https://www.instagram.com/itz_jerry_boy_658" 
+class="visit-btn" 
+target="_blank">
+itz_jerry_boy_658
+</a>
 
 </div>
 
+
+</div>
+</div>
 </section>
-
 <!-- DOWNLOAD -->
-
 <section id="downloads">
-
 <h1>Download Codes</h1>
 
 <ul class="downloads-list">
@@ -408,29 +486,23 @@ text-align:center;
 <section id="contact">
 
 <h1>Contact</h1>
+<p>Please Contact Me If You Have Any Doubt Regarding Any Project.👇👇</p> <br><br>
 
 <form action="https://formspree.io/f/mqeyplel" method="POST" class="contact-form">
 
 <input type="text" name="name" placeholder="Full Name" required>
 <input type="email" name="email" placeholder="Email" required>
 <textarea name="message" placeholder="Message"></textarea>
-
 <button type="submit">Send Message</button>
-
 </form>
-
 </section>
-
 <script>
-
 /* TYPING EFFECT */
-
 const text1="Welcome to CyberVishuCodex 🚀";
 const text2="I am Vishal, a passionate Frontend Developer who builds modern responsive websites.";
 
 let i=0;
 let j=0;
-
 function type1(){
 if(i<text1.length){
 document.getElementById("typing1").innerHTML+=text1.charAt(i);
@@ -440,7 +512,6 @@ setTimeout(type1,40);
 setTimeout(type2,500);
 }
 }
-
 function type2(){
 if(j<text2.length){
 document.getElementById("typing2").innerHTML+=text2.charAt(j);
@@ -448,19 +519,18 @@ j++;
 setTimeout(type2,40);
 }
 }
-
 type1();
-
+const toggle=document.getElementById("menu-toggle");
+const nav=document.getElementById("nav-links");
+toggle.onclick=()=>{
+nav.classList.toggle("active");
+};
 /* PARTICLE BACKGROUND */
-
 const canvas=document.getElementById("particles");
 const ctx=canvas.getContext("2d");
-
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
-
 let particles=[];
-
 for(let k=0;k<120;k++){
 particles.push({
 x:Math.random()*canvas.width,
@@ -470,34 +540,22 @@ dx:(Math.random()-0.5)*0.5,
 dy:(Math.random()-0.5)*0.5
 });
 }
-
 function animate(){
-
 ctx.clearRect(0,0,canvas.width,canvas.height);
-
 particles.forEach(p=>{
-
 ctx.beginPath();
 ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
 ctx.fillStyle="#00e5ff";
 ctx.fill();
-
 p.x+=p.dx;
 p.y+=p.dy;
-
 if(p.x<0||p.x>canvas.width)p.dx*=-1;
 if(p.y<0||p.y>canvas.height)p.dy*=-1;
-
 });
-
 requestAnimationFrame(animate);
-
 }
-
 animate();
-
 </script>
-
 </body>
 </html>
 
