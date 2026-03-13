@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,233 +8,46 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
 /* BASIC RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',Arial;
-}
-
-body{
-background:#e0e5ec;
-color:#3d4468;
-}
-
-/* NAVBAR */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 50px;
-background:#e0e5ec;
-margin:20px;
-border-radius:20px;
-box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;
-}
-
-.logo{
-font-size:1.8rem;
-font-weight:bold;
-color:#00c896;
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-nav ul li a{
-text-decoration:none;
-color:#3d4468;
-font-weight:600;
-}
-
-nav ul li a:hover{
-color:#00c896;
-}
-
-/* SECTIONS */
-
-section{
-padding:100px 20px;
-text-align:center;
-}
-
-/* HERO */
-
-.hero{
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-}
-
-.hero-text{
-max-width:500px;
-}
-
-.hero-text h1{
-color:#00c896;
-font-size:45px;
-margin-bottom:20px;
-}
-
-.hero-text p{
-margin-bottom:15px;
-color:#6c7293;
-}
-
-/* PROFILE */
-
-.profile{
-position:relative;
-width:250px;
-height:250px;
-margin:auto;
-}
-
-.photo{
-width:100%;
-height:100%;
-border-radius:50%;
-box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;
-}
-
-.ring{
-position:absolute;
-top:-20px;
-left:-20px;
-width:290px;
-height:290px;
-border:6px solid #00c896;
-border-radius:50%;
-animation:spin 5s linear infinite;
-}
-
-@keyframes spin{
-0%{transform:rotate(0deg)}
-100%{transform:rotate(360deg)}
-}
-
-/* ABOUT */
-
-.about-cards{
-display:flex;
-gap:30px;
-justify-content:center;
-flex-wrap:wrap;
-margin-top:40px;
-}
-
-.card{
-background:#e0e5ec;
-padding:25px;
-border-radius:20px;
-width:250px;
-box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;
-}
-
-.card i{
-color:#00c896;
-margin-bottom:10px;
-}
-
-/* PROJECTS */
-
-.projects-cards{
-display:flex;
-gap:30px;
-flex-wrap:wrap;
-justify-content:center;
-margin-top:40px;
-}
-
-.project-card{
-background:#e0e5ec;
-padding:25px;
-width:250px;
-border-radius:20px;
-box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;
-}
-
-.project-card i{
-color:#00c896;
-margin-bottom:10px;
-}
-
-/* DOWNLOAD */
-
-.downloads-list{
-list-style:none;
-max-width:500px;
-margin:auto;
-margin-top:30px;
-}
-
-.downloads-list li{
-background:#e0e5ec;
-padding:20px;
-margin-bottom:20px;
-border-radius:15px;
-box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;
-}
-
-/* CONTACT */
-
-.contact-container{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:40px;
-}
-
-.contact-form{
-display:flex;
-flex-direction:column;
-gap:15px;
-max-width:400px;
-width:100%;
-}
-
-.contact-form input,
-.contact-form textarea{
-padding:12px;
-border:none;
-border-radius:12px;
-background:#e0e5ec;
-box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;
-}
-
-.contact-form button{
-padding:12px;
-border:none;
-border-radius:12px;
-background:#e0e5ec;
-color:#00c896;
-font-weight:bold;
-box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;
-cursor:pointer;
-}
-
-.contact-form button:hover{
-box-shadow:inset 4px 4px 8px #bec3cf,inset -4px -4px 8px #ffffff;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial;}
+body{background:#e0e5ec;color:#3d4468;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:#e0e5ec;margin:20px;border-radius:20px;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;}
+.logo{font-size:1.8rem;font-weight:bold;color:#00c896;}
+nav ul{display:flex;gap:30px;list-style:none;}
+nav ul li a{text-decoration:none;color:#3d4468;font-weight:600;}
+nav ul li a:hover{color:#00c896;}
+section{padding:100px 20px;text-align:center;}
+.hero{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+.hero-text{max-width:500px;}
+.hero-text h1{color:#00c896;font-size:45px;margin-bottom:20px;}
+.hero-text p{margin-bottom:15px;color:#6c7293;}
+.profile{position:relative;width:250px;height:250px;margin:auto;}
+.photo{width:100%;height:100%;border-radius:50%;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;}
+.ring{position:absolute;top:-20px;left:-20px;width:290px;height:290px;border:6px solid #00c896;border-radius:50%;animation:spin 5s linear infinite;}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.about-cards{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin-top:40px;}
+.card{background:#e0e5ec;padding:25px;border-radius:20px;width:250px;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;}
+.card i{color:#00c896;margin-bottom:10px;}
+.show-codes-btn{margin-top:10px;padding:8px 12px;border:none;border-radius:10px;background:#e0e5ec;color:#00c896;cursor:pointer;box-shadow:4px 4px 8px #bec3cf,-4px -4px 8px #ffffff;}
+.show-codes-btn:hover{box-shadow:inset 2px 2px 4px #bec3cf,inset -2px -2px 4px #ffffff;}
+.projects-cards{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;margin-top:40px;}
+.project-card{background:#e0e5ec;padding:25px;width:250px;border-radius:20px;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;}
+.project-card i{color:#00c896;margin-bottom:10px;}
+.downloads-list{list-style:none;max-width:500px;margin:auto;margin-top:30px;}
+.downloads-list li{background:#e0e5ec;padding:20px;margin-bottom:20px;border-radius:15px;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;}
+.contact-container{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;}
+.contact-form{display:flex;flex-direction:column;gap:15px;max-width:400px;width:100%;}
+.contact-form input,.contact-form textarea{padding:12px;border:none;border-radius:12px;background:#e0e5ec;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;}
+.contact-form button{padding:12px;border:none;border-radius:12px;background:#e0e5ec;color:#00c896;font-weight:bold;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;cursor:pointer;}
+.contact-form button:hover{box-shadow:inset 4px 4px 8px #bec3cf,inset -4px -4px 8px #ffffff;}
 </style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-
 <nav>
-
 <h2 class="logo">CyberVishuCodex</h2>
-
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
@@ -243,47 +55,36 @@ box-shadow:inset 4px 4px 8px #bec3cf,inset -4px -4px 8px #ffffff;
 <li><a href="#downloads">Downloads</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
-
 </nav>
 
 <!-- HOME -->
-
 <section id="home" class="hero">
-
 <div class="hero-text">
-
 <h1>Introduction</h1>
-
 <p>Hello! My name is Vishal and I am a passionate Frontend Developer.</p>
-
 <p>I build modern responsive websites using HTML CSS and JavaScript.</p>
-
 </div>
-
 <div class="profile">
-
 <div class="ring"></div>
-
 <img src="img/codex.jpg" class="photo">
-
 </div>
-
 </section>
 
 <!-- ABOUT -->
-
 <section id="about">
-
 <h1>About CyberVishuCodex</h1>
-
 <p>CyberVishuCodex is a platform where developers learn coding, explore projects and build modern websites.</p>
 
 <div class="about-cards">
-
 <div class="card">
 <i class="fas fa-laptop-code fa-2x"></i>
 <h3>Projects</h3>
 <p>Explore coding projects and source codes.</p>
+
+<!-- LINK to second page -->
+<a href="project.html" target="_blank">
+<button class="show-codes-btn">Show Codes</button>
+</a>
 </div>
 
 <div class="card">
@@ -297,89 +98,51 @@ box-shadow:inset 4px 4px 8px #bec3cf,inset -4px -4px 8px #ffffff;
 <h3>Community</h3>
 <p>Join coders and collaborate together.</p>
 </div>
-
 </div>
-
 </section>
 
 <!-- PROJECTS -->
-
 <section id="projects">
-
 <h1>Projects</h1>
-
 <div class="projects-cards">
-
 <div class="project-card">
 <i class="fas fa-code fa-2x"></i>
 <h3>Web Portfolio</h3>
 <p>A responsive portfolio website.</p>
 </div>
-
 <div class="project-card">
 <i class="fas fa-gamepad fa-2x"></i>
 <h3>Mini Game</h3>
 <p>Browser game made with JavaScript.</p>
 </div>
-
 </div>
-
 </section>
 
 <!-- DOWNLOADS -->
-
 <section id="downloads">
-
 <h1>Download Codes</h1>
-
 <ul class="downloads-list">
-
-<li>
-<i class="fas fa-file-pdf"></i>
-<a href="PDF/carbon.pdf" download>Carbon Project Code</a>
-</li>
-
-<li>
-<i class="fas fa-file-pdf"></i>
-<a href="PDF/carbon (1) (1).pdf" download>New Project Code</a>
-</li>
-
+<li><i class="fas fa-file-pdf"></i><a href="PDF/carbon.pdf" download>Carbon Project Code</a></li>
+<li><i class="fas fa-file-pdf"></i><a href="PDF/carbon (1) (1).pdf" download>New Project Code</a></li>
 </ul>
-
 </section>
 
 <!-- CONTACT -->
-
 <section id="contact">
-
 <h1>Contact</h1>
-
 <div class="contact-container">
-
 <form action="https://formspree.io/f/mqeyplel" method="POST" class="contact-form">
-
 <input type="text" name="name" placeholder="Full Name" required>
-
 <input type="email" name="email" placeholder="Email" required>
-
 <textarea name="message" placeholder="Message"></textarea>
-
 <button type="submit">Send Message</button>
-
 </form>
-
 </div>
-
 </section>
-
-<script>
-
-console.log("CyberVishuCodex Portfolio Loaded");
-
-</script>
 
 </body>
 </html>
+
 
 
 
