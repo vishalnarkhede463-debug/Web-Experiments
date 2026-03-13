@@ -8,83 +8,361 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* BASIC RESET */
+
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial;}
-body{background:#e0e5ec;color:#3d4468;}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:#e0e5ec;margin:20px;border-radius:20px;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;}
-.logo{font-size:1.8rem;font-weight:bold;color:#00c896;}
-nav ul{display:flex;gap:30px;list-style:none;}
-nav ul li a{text-decoration:none;color:#3d4468;font-weight:600;}
-nav ul li a:hover{color:#00c896;}
-section{padding:100px 20px;text-align:center;}
-.hero{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-.hero-text{max-width:500px;}
-.hero-text h1{color:#00c896;font-size:45px;margin-bottom:20px;}
-.hero-text p{margin-bottom:15px;color:#6c7293;}
-.profile{position:relative;width:250px;height:250px;margin:auto;}
-.photo{width:100%;height:100%;border-radius:50%;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;}
-.ring{position:absolute;top:-20px;left:-20px;width:290px;height:290px;border:6px solid #00c896;border-radius:50%;animation:spin 5s linear infinite;}
-@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-.about-cards{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin-top:40px;}
-.card{background:#e0e5ec;padding:25px;border-radius:20px;width:250px;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;}
-.card i{color:#00c896;margin-bottom:10px;}
-.show-codes-btn{margin-top:10px;padding:8px 12px;border:none;border-radius:10px;background:#e0e5ec;color:#00c896;cursor:pointer;box-shadow:4px 4px 8px #bec3cf,-4px -4px 8px #ffffff;}
-.show-codes-btn:hover{box-shadow:inset 2px 2px 4px #bec3cf,inset -2px -2px 4px #ffffff;}
-.projects-cards{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;margin-top:40px;}
-.project-card{background:#e0e5ec;padding:25px;width:250px;border-radius:20px;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;}
-.project-card i{color:#00c896;margin-bottom:10px;}
-.downloads-list{list-style:none;max-width:500px;margin:auto;margin-top:30px;}
-.downloads-list li{background:#e0e5ec;padding:20px;margin-bottom:20px;border-radius:15px;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;}
-.contact-container{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;}
-.contact-form{display:flex;flex-direction:column;gap:15px;max-width:400px;width:100%;}
-.contact-form input,.contact-form textarea{padding:12px;border:none;border-radius:12px;background:#e0e5ec;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;}
-.contact-form button{padding:12px;border:none;border-radius:12px;background:#e0e5ec;color:#00c896;font-weight:bold;box-shadow:8px 8px 16px #bec3cf,-8px -8px 16px #ffffff;cursor:pointer;}
-.contact-form button:hover{box-shadow:inset 4px 4px 8px #bec3cf,inset -4px -4px 8px #ffffff;}
+
+body{
+background:#0f2027;
+color:#ffffff;
+overflow-x:hidden;
+}
+
+/* PARTICLES */
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-size:1.8rem;
+font-weight:bold;
+color:#00e5ff;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:600;
+}
+
+nav ul li a:hover{
+color:#00e5ff;
+}
+
+/* SECTION */
+
+section{
+padding:100px 20px;
+text-align:center;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.hero-text{
+max-width:500px;
+}
+
+.hero-text h1{
+color:#00e5ff;
+font-size:45px;
+margin-bottom:20px;
+}
+
+.hero-text p{
+margin-bottom:15px;
+font-size:18px;
+color:#d1d1d1;
+}
+
+/* PROFILE */
+
+.profile{
+position:relative;
+width:250px;
+height:250px;
+margin:auto;
+animation:float 4s ease-in-out infinite;
+}
+
+.photo{
+width:100%;
+height:100%;
+border-radius:50%;
+box-shadow:0 0 15px #00e5ff,0 0 40px #00e5ff33;
+}
+
+.ring{
+position:absolute;
+top:-20px;
+left:-20px;
+width:290px;
+height:290px;
+border:4px solid #00e5ff;
+border-radius:50%;
+animation:spin 6s linear infinite,pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0px);}
+}
+
+/* ABOUT CARDS */
+
+.about-cards{
+display:flex;
+gap:30px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:20px;
+width:250px;
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card i{
+color:#00e5ff;
+margin-bottom:10px;
+}
+
+/* BUTTON */
+
+.visit-btn{
+display:inline-block;
+margin-top:15px;
+padding:8px 18px;
+border-radius:10px;
+background:#00e5ff;
+color:black;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* DOWNLOAD */
+
+.downloads-list{
+list-style:none;
+max-width:500px;
+margin:auto;
+margin-top:30px;
+}
+
+.downloads-list li{
+background:rgba(255,255,255,0.05);
+padding:20px;
+margin-bottom:20px;
+border-radius:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.download-btn{
+padding:8px 18px;
+border:none;
+border-radius:10px;
+background:#00e5ff;
+color:black;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* CONTACT */
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:15px;
+max-width:400px;
+margin:auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:12px;
+border:none;
+border-radius:10px;
+}
+
+.contact-form button{
+padding:12px;
+border:none;
+border-radius:10px;
+background:#00e5ff;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* TYPING CURSOR */
+
+#typing1::after,
+#typing2::after{
+content:"|";
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1}
+50%{opacity:0}
+100%{opacity:1}
+}
+
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 900px){
+
+nav{
+flex-direction:column;
+gap:15px;
+padding:20px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.hero{
+flex-direction:column;
+gap:40px;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:32px;
+}
+
+.profile{
+width:200px;
+height:200px;
+}
+
+.ring{
+width:240px;
+height:240px;
+top:-20px;
+left:-20px;
+}
+
+.about-cards{
+flex-direction:column;
+align-items:center;
+}
+
+.projects-cards{
+flex-direction:column;
+align-items:center;
+}
+
+.card,
+.project-card{
+width:90%;
+}
+
+.downloads-list li{
+flex-direction:column;
+gap:10px;
+text-align:center;
+}
+
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<canvas id="particles"></canvas>
+
 <nav>
 <h2 class="logo">CyberVishuCodex</h2>
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
 <li><a href="#downloads">Downloads</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
 <!-- HOME -->
+
 <section id="home" class="hero">
+
 <div class="hero-text">
 <h1>Introduction</h1>
-<p>Hello! My name is Vishal and I am a passionate Frontend Developer.</p>
-<p>I build modern responsive websites using HTML CSS and JavaScript.</p>
+<p id="typing1"></p>
+<p id="typing2"></p>
 </div>
+
 <div class="profile">
 <div class="ring"></div>
 <img src="img/codex.jpg" class="photo">
 </div>
+
 </section>
 
 <!-- ABOUT -->
+
 <section id="about">
+
 <h1>About CyberVishuCodex</h1>
+
 <p>CyberVishuCodex is a platform where developers learn coding, explore projects and build modern websites.</p>
 
 <div class="about-cards">
+
 <div class="card">
 <i class="fas fa-laptop-code fa-2x"></i>
 <h3>Projects</h3>
 <p>Explore coding projects and source codes.</p>
 
-<!-- LINK to second page -->
-<a href="project.html" target="_blank">
-<button class="show-codes-btn">Show Codes</button>
-</a>
+<a href="allin oneproject.html" class="visit-btn">Visit Projects</a>
+
 </div>
 
 <div class="card">
@@ -98,51 +376,130 @@ section{padding:100px 20px;text-align:center;}
 <h3>Community</h3>
 <p>Join coders and collaborate together.</p>
 </div>
+
 </div>
+
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-<h1>Projects</h1>
-<div class="projects-cards">
-<div class="project-card">
-<i class="fas fa-code fa-2x"></i>
-<h3>Web Portfolio</h3>
-<p>A responsive portfolio website.</p>
-</div>
-<div class="project-card">
-<i class="fas fa-gamepad fa-2x"></i>
-<h3>Mini Game</h3>
-<p>Browser game made with JavaScript.</p>
-</div>
-</div>
-</section>
+<!-- DOWNLOAD -->
 
-<!-- DOWNLOADS -->
 <section id="downloads">
+
 <h1>Download Codes</h1>
+
 <ul class="downloads-list">
-<li><i class="fas fa-file-pdf"></i><a href="PDF/carbon.pdf" download>Carbon Project Code</a></li>
-<li><i class="fas fa-file-pdf"></i><a href="PDF/carbon (1) (1).pdf" download>New Project Code</a></li>
+
+<li>
+<span>Carbon Project Code</span>
+<a href="PDF/carbon.pdf" download class="download-btn">Download</a>
+</li>
+
+<li>
+<span>New Project Code</span>
+<a href="PDF/carbon (1) (1).pdf" download class="download-btn">Download</a>
+</li>
+
 </ul>
+
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact">
+
 <h1>Contact</h1>
-<div class="contact-container">
+
 <form action="https://formspree.io/f/mqeyplel" method="POST" class="contact-form">
+
 <input type="text" name="name" placeholder="Full Name" required>
 <input type="email" name="email" placeholder="Email" required>
 <textarea name="message" placeholder="Message"></textarea>
+
 <button type="submit">Send Message</button>
+
 </form>
-</div>
+
 </section>
+
+<script>
+
+/* TYPING EFFECT */
+
+const text1="Welcome to CyberVishuCodex 🚀";
+const text2="I am Vishal, a passionate Frontend Developer who builds modern responsive websites.";
+
+let i=0;
+let j=0;
+
+function type1(){
+if(i<text1.length){
+document.getElementById("typing1").innerHTML+=text1.charAt(i);
+i++;
+setTimeout(type1,40);
+}else{
+setTimeout(type2,500);
+}
+}
+
+function type2(){
+if(j<text2.length){
+document.getElementById("typing2").innerHTML+=text2.charAt(j);
+j++;
+setTimeout(type2,40);
+}
+}
+
+type1();
+
+/* PARTICLE BACKGROUND */
+
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let k=0;k<120;k++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+dx:(Math.random()-0.5)*0.5,
+dy:(Math.random()-0.5)*0.5
+});
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle="#00e5ff";
+ctx.fill();
+
+p.x+=p.dx;
+p.y+=p.dy;
+
+if(p.x<0||p.x>canvas.width)p.dx*=-1;
+if(p.y<0||p.y>canvas.height)p.dy*=-1;
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+</script>
 
 </body>
 </html>
-
 
 
 
