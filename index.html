@@ -40,7 +40,72 @@
         overflow-x: hidden;
         cursor: none;
       }
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
 
+  /* NAVBAR */
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* HERO / HEADER */
+  .hero {
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  /* COURSE CARDS */
+  .course-card {
+    width: 100%;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr; /* single column */
+    gap: 20px;
+  }
+
+  /* DOWNLOAD SECTION */
+  .download-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CONTACT */
+  .contact-box {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  /* BUTTONS */
+  .course-btn,
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* TEXT */
+  .section-title {
+    font-size: 22px;
+  }
+
+  .section-sub {
+    font-size: 13px;
+  }
+}
       /* CUSTOM CURSOR */
       #cursor {
         width: 12px;
@@ -1400,6 +1465,95 @@
   border-color: #7c3aed;
   box-shadow: 0 0 10px rgba(124, 58, 237, 0.6);
 }
+
+
+#contact {
+  padding: 5rem 2rem;
+  position: relative;
+  text-align: center;
+}
+
+.contact-box {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(20, 20, 35, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.2);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Floating labels */
+.input-group {
+  position: relative;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  background: transparent;
+  color: white;
+  outline: none;
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  color: #aaa;
+  font-size: 13px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group textarea:focus + label,
+.input-group input:valid + label,
+.input-group textarea:valid + label {
+  top: -8px;
+  font-size: 11px;
+  color: #7c3aed;
+  background: #0f0f1a;
+  padding: 0 4px;
+}
+
+.contact-form button {
+  margin-top: 10px;
+}
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
     </style>
   </head>
   <body>
@@ -1412,7 +1566,7 @@
 
     <!-- NAV -->
     <nav>
-        
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <a class="nav-logo" href="#home">
         <div class="nav-logo-icon">⚡</div>
         Cyber<span style="color: var(--orange)">Vishu Codex</span>
@@ -1422,6 +1576,8 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#courses">Courses</a></li>
         <li><a href="#download">Download</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
   <!-- 🔍 SEARCH BAR -->
   <input
     type="text"
@@ -1429,7 +1585,7 @@
     placeholder="Search..."
     onkeyup="searchContent()"
     class="nav-search"
-  />
+  /></li>
       </ul>
       <div class="nav-socials">
         <a href="#" title="YouTube">▶</a>
@@ -1773,10 +1929,10 @@
             </div>
           </div>
         </div>
-          <!-- c# -->
+          <!-- c -->
         <div class="course-card searchable">
           <div class="course-thumb thumb-js">
-            <div class="thumb-icon">©#</div>
+            <div class="thumb-icon">©</div>
             <div
               class="thumb-badge"
               style="background: rgba(247, 223, 30, 0.2); color: #f7df1e"
@@ -1785,8 +1941,8 @@
             </div>
           </div>
           <div class="course-body">
-            <div class="course-lang lang-js">C#</div>
-            <div class="course-title">C# — From Beginner to Advanced</div>
+            <div class="course-lang lang-js">C</div>
+            <div class="course-title">C — From Beginner to Advanced</div>
             <p class="course-desc">
              Variables, data types, operators, control structures (if-else, loops), functions, arrays, pointers, structures, file handling, and basic data structures all covered
             </p>
@@ -1809,6 +1965,45 @@
             </div>
           </div>
         </div>
+
+
+  <!-- c -->
+        <div class="course-card searchable">
+          <div class="course-thumb thumb-js">
+            <div class="thumb-icon">℗ʏ₸</div>
+            <div
+              class="thumb-badge"
+              style="background: rgba(247, 223, 30, 0.2); color: #f7df1e"
+            >
+              New
+            </div>
+          </div>
+          <div class="course-body">
+            <div class="course-lang lang-js">C</div>
+            <div class="course-title">Python — From Beginner to Advanced</div>
+            <p class="course-desc">
+                                Variables, data types, operators, control structures (if-else, loops), functions, lists, tuples, dictionaries, object-oriented programming (classes, inheritance, polymorphism), file handling, modules, and basic data structures all covered.
+            </p>
+            <div class="course-meta">
+              <div class="course-meta-left">
+                <span class="meta-item">📚 12 lessons</span>
+                <span class="meta-item">⏱ 12h total</span>
+                <span class="meta-item">⚡ All levels</span>
+              </div>
+              <button
+                class="course-btn"
+                onclick="
+                  document
+                    .getElementById('download')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+              >
+                Download ↓
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -2095,6 +2290,43 @@
           </div>
         </div>
        
+
+ <!-- Python Downloads -->
+        <div class="dl-card searchable">
+          <div class="dl-card-header">
+            <div class="dl-icon js">⚡</div>
+            <div class="dl-badge both"> Python Notes</div>
+          </div>
+          <div class="dl-title">Python Complete Notes</div>
+          <p class="dl-desc">
+           Variables, data types, operators, control structures (if-else, loops), functions, lists, tuples, dictionaries, object-oriented programming (classes, inheritance, polymorphism), file handling, modules, and basic data structures all covered.
+          </p>
+          <div class="dl-progress">
+            <div class="dl-progress-label">
+              <span>Topics covered</span><span>12 / 12</span>
+            </div>
+            <div class="dl-bar">
+              <div class="dl-bar-fill" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="dl-meta">
+            <span>📄 PDF · 27 pages</span>
+            <span>💾 990 KB</span>
+            <span>📦 Code files: 30</span>
+          </div>
+          <div class="dl-btns">
+            <a
+              class="dl-btn notes-btn"
+              href="#"
+              onclick="downloadFile('PDF/Python.pdf', 'Python Notes PDF')"
+              >📄 Python-codes & Notes PDF</a
+            >
+           
+          </div>
+        </div>
+
+
+
         <div class="dl-card searchable">
           <div class="dl-card-header">
             <div class="dl-icon js" style="font-size: 1.2rem">📋</div>
@@ -2122,9 +2354,24 @@
               "
               href="#"
               onclick="
-                downloadFile('PDF/All languages.zip', 'Complete Web Dev Bundle')
+                downloadFile('PDF/All languages-1.zip', 'Complete Web Dev Bundle')
               "
-              >🎁 Download Everything</a
+              >🎁 Download Everything(1-6 PDF)</a
+            >
+               <a
+              class="dl-btn code-btn"
+              style="
+                background: rgba(124, 58, 237, 0.2);
+                border-color: rgba(124, 58, 237, 0.4);
+                color: var(--purple2);
+                font-size: 0.85rem;
+                padding: 0.65rem 1.4rem;
+              "
+              href="#"
+              onclick="
+                downloadFile('PDF/All languages-2.zip', 'Complete Web Dev Bundle')
+              "
+              >🎁 Download Everything (7-12 PDF)</a
             >
           </div>
         </div>
@@ -2166,6 +2413,33 @@
         </div>
       </div>
     </section>
+<section id="contact">
+<form
+  class="contact-form"
+  action="https://formspree.io/f/mqeyplel"
+  method="POST"
+>
+<p id="form-status" style="margin-top:10px; font-size:13px;"></p>
+  <div class="input-group">
+    <input type="text" name="name" required />
+    <label>Your Name</label>
+  </div>
+
+  <div class="input-group">
+    <input type="email" name="email" required />
+    <label>Your Email</label>
+  </div>
+
+  <div class="input-group">
+    <textarea name="message" rows="4" required></textarea>
+    <label>Your Message</label>
+  </div>
+
+  <button type="submit" class="btn-primary">
+    🚀 Send Message
+  </button>
+</form>
+</section>
 
     <!-- FOOTER -->
     <footer>
@@ -2175,6 +2449,7 @@
         <a href="#about">About</a>
         <a href="#courses">Courses</a>
         <a href="#download">Download</a>
+        <a href="#contact">Contact</a>
       </div>
       <div class="footer-copy">© 2026 CodeLearn — Free for everyone.</div>
     </footer>
@@ -2434,6 +2709,32 @@ function searchContent() {
       item.style.display = "none";
     }
   });
+}
+const form = document.querySelector(".contact-form");
+const status = document.getElementById("form-status");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: {
+      Accept: "application/json",
+    },
+  }).then((response) => {
+    if (response.ok) {
+      status.innerHTML = "✅ Message sent successfully!";
+      form.reset();
+    } else {
+      status.innerHTML = "❌ Oops! Something went wrong.";
+    }
+  });
+});
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("active");
 }
     </script>
   </body>
